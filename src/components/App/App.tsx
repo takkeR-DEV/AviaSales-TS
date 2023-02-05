@@ -4,12 +4,12 @@ import Filter from '../Filter/Filter';
 import Header from '../Header/Header';
 import TicketsList from '../TicketsList/TicketsList';
 import Transfers from '../Transfers/Transfers';
-import AviaSalesApi from '../../components/api/aviaSalesApi';
+import AviaSalesApi from '../../service/api/aviaSalesApi';
 import { Spin } from 'antd';
 import './App.scss';
 import TicketsShowMore from '../TicketsShowMore/TicketsShowMore';
 import { useActions } from '../../hooks/useActions';
-import { TicketsDataType } from '../types/tickets';
+import { TicketsDataType } from '../../types/tickets';
 
 const api = new AviaSalesApi();
 

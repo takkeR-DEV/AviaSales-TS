@@ -1,4 +1,4 @@
-import { TicketsAction, TicketState, TiscketsActionType } from '../../components/types/tickets';
+import { TicketsAction, TicketState, TiscketsActionType } from '../../types/tickets';
 
 const initialState: TicketState = {
   ticketsData: [],

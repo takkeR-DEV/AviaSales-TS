@@ -1,4 +1,4 @@
-import { TransfersAction, TransfersActionType, TransfersState } from '../../components/types/transfers';
+import { TransfersAction, TransfersActionType, TransfersState } from '../../types/transfers';
 
 const initialState: TransfersState = {
   checkedList: [],

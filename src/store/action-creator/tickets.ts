@@ -1,7 +1,7 @@
 import { CheckboxChangeEvent } from 'antd/es/checkbox';
 import { CheckboxValueType } from 'antd/es/checkbox/Group';
 import { Dispatch } from 'redux';
-import { TicketsAction, TiscketsActionType } from '../../components/types/tickets';
+import { TicketsAction, TiscketsActionType } from '../../types/tickets';
 
 export const requestTickets = (dispatch: Dispatch<TicketsAction>, id: string): void => {
   dispatch({ type: TiscketsActionType.FETH_TIKETS });

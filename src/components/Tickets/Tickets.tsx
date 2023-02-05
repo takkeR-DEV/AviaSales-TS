@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import uniqid from 'uniqid';
 import './Tickets.scss';
-// interface TicketsProps {}
 const localeStringConfig = {
   style: 'currency',
   currency: 'RUB',

@@ -1,4 +1,4 @@
-import { CountAction, CountActionType, CountState } from '../../components/types/count';
+import { CountAction, CountActionType, CountState } from '../../types/count';
 
 const initialState: CountState = {
   count: 5,
