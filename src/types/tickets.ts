@@ -35,7 +35,7 @@ interface FetchTicketsErrorAction {
 }
 interface FetchTicketsSuccessPartAction {
   type: TiscketsActionType.FETH_TIKETS_SUCCESS_PART;
-  payload: any[];
+  payload: TicketsDataType;
 }
 export type TicketsAction =
   | FetchTicketsAction

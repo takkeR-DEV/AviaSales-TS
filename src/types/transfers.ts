@@ -2,8 +2,8 @@ import { CheckboxValueType } from 'antd/es/checkbox/Group';
 
 export interface TransfersState {
   checkedList: CheckboxValueType[];
-  indeterminate: any;
-  checkAll: any;
+  indeterminate: boolean;
+  checkAll: boolean;
 }
 
 export enum TransfersActionType {

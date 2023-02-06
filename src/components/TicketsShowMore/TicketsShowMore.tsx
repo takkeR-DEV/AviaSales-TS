@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
-import { CountAction } from '../../types/count';
 import './TicketsShowMore.scss';
 
 const TicketsShowMore: FC = () => {
