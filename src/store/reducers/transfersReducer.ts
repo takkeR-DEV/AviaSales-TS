@@ -2,7 +2,7 @@ import { TransfersAction, TransfersActionType, TransfersState } from '../../type
 
 const initialState: TransfersState = {
   checkedList: [],
-  indeterminate: true,
+  indeterminate: false,
   checkAll: false,
 };
 

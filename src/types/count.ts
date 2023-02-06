@@ -4,6 +4,7 @@ export interface CountState {
 
 export enum CountActionType {
   ADD_COUNT = 'ADD_COUNT',
+  RESET_COUNT = 'RESET_COUNT',
 }
 
 interface AddCountAction {
@@ -11,4 +12,9 @@ interface AddCountAction {
   payload: number;
 }
 
-export type CountAction = AddCountAction;
+interface ResetCountAction {
+  type: CountActionType.RESET_COUNT;
+  payload: number;
+}
+
+export type CountAction = AddCountAction | ResetCountAction;

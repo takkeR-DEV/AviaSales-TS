@@ -12,7 +12,7 @@ interface sortType {
 }
 
 const initialState: FilterState = {
-  sort: '',
+  sort: 'price',
 };
 
 export const filterReducer = (state = initialState, action: sortType): any => {

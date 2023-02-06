@@ -49,6 +49,7 @@ export const onCheckAllChange = (e: CheckboxChangeEvent) => {
 
 export const setFilter = (sort: string): any => {
   return (dispatch: any) => {
-    return dispatch({ type: 'SET_SORT', payload: sort });
+    dispatch({ type: 'SET_SORT', payload: sort });
+    dispatch({ type: 'RESET_COUNT', payload: 5 });
   };
 };
