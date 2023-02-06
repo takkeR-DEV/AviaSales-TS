@@ -1,15 +1,19 @@
 export type TicketsDataType = TicketsDataTypeObj[];
 
-interface TicketsDataTypeObj {
+export interface TicketsDataTypeObj {
   price: number;
   carrier: string;
-  segments: { duration: number; stops: string[] }[];
+  segments: { duration: number; stops: string[]; origin: string; destination: string; date: string }[];
 }
 
 export interface TicketState {
   ticketsData: TicketsDataType;
   loading?: boolean;
   error?: null | string;
+}
+
+export interface FilteredDataType {
+  filterTicketsData: TicketsDataType;
 }
 
 export enum TiscketsActionType {

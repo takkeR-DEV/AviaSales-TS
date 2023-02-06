@@ -19,8 +19,9 @@ function App() {
   const { count } = useTypedSelector((state) => state.count);
   const { sort } = useTypedSelector((state) => state.sort);
   const { asyncSetTickets } = useActions();
+  console.log(ticketsData);
 
-  const transfers = checkedList.map((el: string): number => {
+  const transfers = checkedList.map((el): number => {
     if (el === 'Без пересадок') {
       return 0;
     } else if (el === '1 пересадка') {

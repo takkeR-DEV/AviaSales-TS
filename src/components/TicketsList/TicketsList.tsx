@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import Tickets from '../Tickets/Tickets';
 import uniqid from 'uniqid';
+import { FilteredDataType } from '../../types/tickets';
 
-interface Test {
-  filterTicketsData: any[];
-}
-const TicketsList: FC<Test> = ({ filterTicketsData }) => {
+const TicketsList: FC<FilteredDataType> = ({ filterTicketsData }) => {
+  console.log('DATA', filterTicketsData);
+
   return (
     <div>
       {filterTicketsData.map((data) => {

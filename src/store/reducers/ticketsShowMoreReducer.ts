@@ -4,7 +4,7 @@ const initialState: CountState = {
   count: 5,
 };
 
-export const ticketsShowMoreReducer = (state = initialState, action: CountAction): any => {
+export const ticketsShowMoreReducer = (state = initialState, action: CountAction): CountState => {
   switch (action.type) {
     case CountActionType.ADD_COUNT:
       return { count: state.count + action.payload };

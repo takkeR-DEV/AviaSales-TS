@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import uniqid from 'uniqid';
+import { TicketsDataTypeObj } from '../../types/tickets';
 import './Tickets.scss';
 const localeStringConfig = {
   style: 'currency',
@@ -17,12 +18,7 @@ const getTicketTargetTime = (date: string, duration: number) => {
   }`;
 };
 
-interface ITicketsProps {
-  price: number;
-  carrier: string;
-  segments: any[];
-}
-const Tickets: FC<ITicketsProps> = ({ price, carrier, segments }) => {
+const Tickets: FC<TicketsDataTypeObj> = ({ price, carrier, segments }) => {
   const imageUrl = `https://pics.avs.io/99/36/${carrier}.png`;
   const info = segments.map((seg) => {
     return (

@@ -1,7 +1,7 @@
 import { CheckboxValueType } from 'antd/es/checkbox/Group';
 
 export interface TransfersState {
-  checkedList: string[];
+  checkedList: CheckboxValueType[];
   indeterminate: any;
   checkAll: any;
 }
@@ -18,11 +18,11 @@ interface CheckedListAction {
 }
 interface IndeterminateAction {
   type: TransfersActionType.INDETERMINATE;
-  payload: CheckboxValueType[];
+  payload: boolean;
 }
 interface CheckAllAction {
   type: TransfersActionType.CHECK_ALL;
-  payload: CheckboxValueType[];
+  payload: boolean;
 }
 
 export type TransfersAction = CheckedListAction | IndeterminateAction | CheckAllAction;

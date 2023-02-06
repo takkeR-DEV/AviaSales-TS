@@ -1,21 +1,10 @@
-interface FilterState {
-  sort: string;
-}
-
-enum SortActionType {
-  SET_SORT = 'SET_SORT',
-}
-
-interface sortType {
-  type: SortActionType.SET_SORT;
-  payload: any;
-}
+import { FilterState, FilterActionType, SortActionType } from '../../types/filter';
 
 const initialState: FilterState = {
   sort: 'price',
 };
 
-export const filterReducer = (state = initialState, action: sortType): any => {
+export const filterReducer = (state = initialState, action: FilterActionType): FilterState => {
   switch (action.type) {
     case SortActionType.SET_SORT:
       return { ...state, sort: action.payload };

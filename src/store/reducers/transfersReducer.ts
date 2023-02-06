@@ -6,7 +6,7 @@ const initialState: TransfersState = {
   checkAll: false,
 };
 
-export const transfersReducer = (state = initialState, action: TransfersAction): any => {
+export const transfersReducer = (state = initialState, action: TransfersAction): TransfersState => {
   switch (action.type) {
     case TransfersActionType.CHECKED_LIST:
       return { checkedList: [...action.payload], checkAll: false, indeterminate: true };
