@@ -1,21 +1,21 @@
 import { FC } from 'react';
 import { useActions } from '../../hooks/useActions';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
-import './Filter.scss';
+import flt from './Filter.module.scss';
 const Filter: FC = () => {
   const { setFilter } = useActions();
   const { sort } = useTypedSelector((state) => state.sort);
-  const isActive = (active: string) => (active === sort ? ' filter__active' : '');
+  const isActive = (active: string) => (active === sort ? ` ${flt.filter__active}` : '');
 
   return (
-    <div className="filter">
-      <button className={'filter__btn' + isActive('price')} onClick={() => setFilter('price')}>
+    <div className={flt.filter}>
+      <button className={flt.filter__btn + isActive('price')} onClick={() => setFilter('price')}>
         САМЫЙ ДЕШЕВЫЙ
       </button>
-      <button className={'filter__btn' + isActive('fast')} onClick={() => setFilter('fast')}>
+      <button className={flt.filter__btn + isActive('fast')} onClick={() => setFilter('fast')}>
         САМЫЙ БЫСТРЫЙ
       </button>
-      <button className={'filter__btn' + isActive('optimal')} onClick={() => setFilter('optimal')}>
+      <button className={flt.filter__btn + isActive('optimal')} onClick={() => setFilter('optimal')}>
         ОПТИМАЛЬНЫЙ
       </button>
     </div>
