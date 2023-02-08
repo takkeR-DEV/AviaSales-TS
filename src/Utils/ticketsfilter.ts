@@ -19,8 +19,6 @@ export const transfersSort = (checkedList: CheckboxValueType[]) => {
 };
 
 export const getFiltredTickets = (ticketsData: TicketsDataType, transfers: number[], sort: string) => {
-  console.log('я перефильтровываюсь');
-
   const ticketsFiltred = ticketsData.filter((ticket) => {
     const stops = ticket.segments[0].stops.length;
     for (const transfersCount of transfers) if (stops === transfersCount) return true;

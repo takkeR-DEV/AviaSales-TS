@@ -6,7 +6,7 @@ import TicketsList from '../TicketsList/TicketsList';
 import Transfers from '../Transfers/Transfers';
 import AviaSalesApi from '../../service/api/aviaSalesApi';
 import { Spin } from 'antd';
-import './App.scss';
+import app from './App.module.scss';
 import TicketsShowMore from '../TicketsShowMore/TicketsShowMore';
 import { useActions } from '../../hooks/useActions';
 import { getFiltredTickets, transfersSort } from '../../Utils/ticketsfilter';
@@ -32,23 +32,23 @@ function App() {
 
   const filterTicketsData = filterTicketsDataOne.slice(0, count);
   return (
-    <div className="wrapper">
+    <div className={app.wrapper}>
       <Header />
-      <div className="wrapper__content">
+      <div className={app.wrapper__content}>
         <Transfers />
-        <div className="warapper__right">
+        <div className={app.warapper__right}>
           <Filter />
           {!error ? (
             <>
-              {loading && filterTicketsData.length ? <Spin className="spin" size="large" /> : null}
+              {loading && filterTicketsData.length ? <Spin className={app.spin} size="large" /> : null}
               {!filterTicketsData.length && !error ? (
-                <span className="nosearch">БИЛЕТОВ С ДАННЫМ ЗАПРОСОМ НЕ НАЙДЕНО</span>
+                <span className={app.nosearch}>БИЛЕТОВ С ДАННЫМ ЗАПРОСОМ НЕ НАЙДЕНО</span>
               ) : null}
               <TicketsList filterTicketsData={filterTicketsData} />
               {filterTicketsData.length ? <TicketsShowMore /> : null}
             </>
           ) : (
-            <span className="nosearch">ПРОИЗОШЛА ОШИБКА</span>
+            <span className={app.nosearch}>ПРОИЗОШЛА ОШИБКА</span>
           )}
         </div>
       </div>

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { TicketsDataTypeObj } from '../../types/tickets';
 import { getTicketTargetTime } from '../../Utils/ticketsfilter';
-import './Tickets.scss';
+import tc from './Tickets.module.scss';
 const localeStringConfig = {
   style: 'currency',
   currency: 'RUB',
@@ -40,12 +40,12 @@ const Tickets: FC<TicketsDataTypeObj> = ({ price, carrier, segments }) => {
     );
   });
   return (
-    <div className="tickets">
-      <div className="tickets__header">
-        <span className="tickets__cost">{price.toLocaleString('ru-RU', localeStringConfig)}</span>
-        <img src={imageUrl} alt="" />
+    <div className={tc.tickets}>
+      <div className={tc.tickets__header}>
+        <span className={tc.tickets__cost}>{price.toLocaleString('ru-RU', localeStringConfig)}</span>
+        <img src={imageUrl} alt="логотип" />
       </div>
-      <div className="tickets__info">{info}</div>
+      <div className={tc.tickets__info}>{info}</div>
     </div>
   );
 };
