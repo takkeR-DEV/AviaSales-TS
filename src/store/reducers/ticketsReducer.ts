@@ -17,8 +17,8 @@ export const ticketsReducer = (state = initialState, action: TicketsAction): Tic
     case TiscketsActionType.FETH_TIKETS_SUCCESS:
       return { loading: false, error: null, ticketsData: [...state.ticketsData] };
 
-    // case TiscketsActionType.FETH_TIKETS_ERROR:
-    //   return { loading: true, error: action.payload, ticketsData: [] };
+    case TiscketsActionType.FETH_TIKETS_ERROR:
+      return { loading: false, error: action.payload, ticketsData: [] };
 
     default:
       return state;

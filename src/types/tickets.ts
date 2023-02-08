@@ -9,7 +9,7 @@ export interface TicketsDataTypeObj {
 export interface TicketState {
   ticketsData: TicketsDataType;
   loading?: boolean;
-  error?: null | string;
+  error?: null | boolean;
 }
 
 export interface FilteredDataType {
@@ -31,7 +31,7 @@ interface FetchTicketsSuccessAction {
 }
 interface FetchTicketsErrorAction {
   type: TiscketsActionType.FETH_TIKETS_ERROR;
-  payload: string;
+  payload: boolean;
 }
 interface FetchTicketsSuccessPartAction {
   type: TiscketsActionType.FETH_TIKETS_SUCCESS_PART;

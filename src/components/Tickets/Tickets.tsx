@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import uniqid from 'uniqid';
 import { TicketsDataTypeObj } from '../../types/tickets';
+import { getTicketTargetTime } from '../../Utils/ticketsfilter';
 import './Tickets.scss';
 const localeStringConfig = {
   style: 'currency',
@@ -8,21 +8,18 @@ const localeStringConfig = {
   maximumSignificantDigits: 10,
 };
 
-const getTicketTargetTime = (date: string, duration: number) => {
-  const dateFrom = new Date(date);
-  const dateTo = new Date(dateFrom.getMilliseconds() + duration * 60000);
-  return `${dateFrom.getUTCHours() < 10 ? `0${dateFrom.getUTCHours()}` : dateFrom.getUTCHours()}:${
-    dateFrom.getUTCMinutes() < 10 ? `0${dateFrom.getUTCMinutes()}` : dateFrom.getUTCMinutes()
-  } - ${dateTo.getUTCHours() < 10 ? `0${dateTo.getUTCHours()}` : dateTo.getUTCHours()}:${
-    dateTo.getUTCMinutes() < 10 ? `0${dateTo.getUTCMinutes()}` : dateTo.getUTCMinutes()
-  }`;
-};
+function counter() {
+  let maxId = 1;
+  return () => maxId++;
+}
+
+const maxId = counter();
 
 const Tickets: FC<TicketsDataTypeObj> = ({ price, carrier, segments }) => {
   const imageUrl = `https://pics.avs.io/99/36/${carrier}.png`;
   const info = segments.map((seg) => {
     return (
-      <ul key={uniqid()}>
+      <ul key={maxId()}>
         <li>
           <h3>
             {seg.origin} – {seg.destination}

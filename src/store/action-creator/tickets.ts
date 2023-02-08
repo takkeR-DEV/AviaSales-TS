@@ -12,7 +12,14 @@ export const requestTickets = (dispatch: Dispatch<TicketsAction>, id: string): v
   dispatch({ type: TiscketsActionType.FETH_TIKETS });
   fetch(`https://aviasales-test-api.kata.academy/tickets?searchId=${id}`)
     .then((tickets) => {
-      return tickets.json();
+      if (tickets.status === 500) {
+        requestTickets(dispatch, id);
+      } else if (tickets.status === 200) {
+        return tickets.json();
+      } else {
+        dispatch({ type: TiscketsActionType.FETH_TIKETS_ERROR, payload: true });
+        throw new Error('Ошибка');
+      }
     })
     .then((tickets) => {
       if (tickets.stop) {
@@ -24,9 +31,7 @@ export const requestTickets = (dispatch: Dispatch<TicketsAction>, id: string): v
         requestTickets(dispatch, id);
       }
     })
-    .catch(() => {
-      requestTickets(dispatch, id);
-    });
+    .catch((err) => err);
 };
 
 export const asyncSetTickets = (id: string) => {
