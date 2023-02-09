@@ -8,7 +8,13 @@ const TicketsList: FC<FilteredDataType> = ({ filterTicketsData }) => {
       {filterTicketsData.map((data) => {
         return (
           <Tickets
-            key={data.price + data.segments[0].date + data.segments[0].duration + data.segments[1].date}
+            key={
+              data.price +
+              data.segments[0].date +
+              data.segments[0].duration +
+              data.segments[1].date +
+              data.segments[1].duration
+            }
             price={data.price}
             carrier={data.carrier}
             segments={data.segments}
